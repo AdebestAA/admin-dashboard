@@ -34,7 +34,7 @@ export default function RootLayout({
 {/* desktop */}
           <div className="mdsm:flex hidden">
         <SideBar/>
-        <div className="bg-[red] w-full">
+        <div className="w-full">
         <Header/>
         {children}
         </div>

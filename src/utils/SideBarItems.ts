@@ -13,36 +13,43 @@ export const SideBarMenu : sideBarMenuTypes [ ] = [
     {
         id:1,
         name:"Overview",
+        link:"/",
         icon: FiBarChart2
     },
     {
         id:2,
         name:"Products",
+        link:"/products",
         icon: FiShoppingBag
     },
     {
         id:3,
-        name:"users",
+        name:"Users",
+        link:"/users",
         icon:LuUsers 
     },
     {
         id:4,
         name:"Sales",
+        link:"/sales",
         icon: LiaSellcast
     },
     {
         id:5,
         name:"Orders",
+        link:"/orders",
         icon:  MdOutlineShoppingCart
     },
     {
         id:6,
         name:"Analytics",
+        link:"/analytics",
         icon: IoAnalytics
     },
     {
         id:7,
-        name:"Analytics",
+        name:"Settings",
+        link:"/settings",
         icon: CiSettings 
     },
 ]
