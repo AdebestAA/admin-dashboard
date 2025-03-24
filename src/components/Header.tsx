@@ -20,7 +20,7 @@ console.log(pathName);
 
 
   return (
-    <div className='bg-white border-[1px] border-border  w-full flex justify-between py-2 items-center mdsm:px-2 px-4'>
+    <div className='bg-white border-[1px] border-border h-[40px]  w-full flex justify-between py-2 items-center mdsm:px-4 px-4'>
       <h1 className='capitalize'>{pathName === "/" ? "Overview" : pathName.slice(1,pathName.length)}</h1>
 <button className='mdsm:hidden' onClick={()=>{
 if (slideState) {

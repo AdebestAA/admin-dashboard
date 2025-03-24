@@ -43,7 +43,7 @@ return ()=> clearInterval(intervalId)
   },[valueCount])
 const pathName = usePathname()
   return (
-    <div className="px-2">
+    <div className="px-4">
       <section className="my-4 flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
         {OverViewStats.map((item,index)=>{
           return (

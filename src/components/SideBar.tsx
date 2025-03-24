@@ -77,7 +77,7 @@ else{
 
   return (
     <>
-  <div className={`bg-white border-[1px] border-border text-text w-[200px] px-2 min-h-screen ${classGen} mdsm:hidden`} ref={navRef}>
+  <div className={`bg-white fixed top-[40px] z-50  border-[1px] border-border text-text w-[200px] px-2 min-h-screen ${classGen} mdsm:hidden`} ref={navRef}>
 <div>
 
 {SideBarMenu.map((item,index)=>{
