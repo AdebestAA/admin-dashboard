@@ -9,5 +9,9 @@ export type sideBarMenuTypes = {
 }
 
 
-
-
+export type overViewStatsType = {
+        id:number,
+        name:string,
+        value:number,
+        icon:React.ElementType
+}
