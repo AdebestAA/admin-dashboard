@@ -29,7 +29,7 @@ export default function RootLayout({
     <ClientProvider>
     <html lang="en">
       <body
-        className={`bg-background`}
+        className={`bg-background font-poppins`}
         >
 {/* desktop */}
           <div className="mdsm:flex hidden">

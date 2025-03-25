@@ -109,7 +109,7 @@ className='pl-2  mt-4 cursor-pointer'><FaBars size={15}/></button>
     
     return (
         <Link href={item.link} key={item.id} className='hover:bg-hover hover:font-semibold transition flex items-center w-4/5 rounded-lg sm px-2 h-[50px]  '>
-            <item.icon className={`text-lg font-bold`}/>
+           <span> <item.icon className={`text-lg font-bold`}/></span>
             <span className={`transition duration-[0.5s] ml-4  ${showNavText ? "inline opacity-100": "hidden opacity-0"} `}>{item.name}</span> 
         </Link>
     )
