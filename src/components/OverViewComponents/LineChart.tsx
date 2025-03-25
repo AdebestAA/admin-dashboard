@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJs,
@@ -25,7 +25,12 @@ ChartJs.register(
 )
 
  const  LineChart = ()=>{
+    const [key,setKey] = useState(0)
 
+
+    useEffect(()=>{
+setKey(prev => prev + 1)
+    },[])
     // data
     const data = {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
@@ -50,10 +55,10 @@ ChartJs.register(
 
       const options = {
         responsive: true,
-        animation:{
-            duration:1000,
-            easing:"easeInOutQuad"
-        },
+        animation: {
+            duration: 1000, 
+            easing: "easeOutExpo",
+          },
         plugins: {
             // LENGEND PLUGIN
           legend: {   
@@ -84,7 +89,7 @@ ChartJs.register(
         },
         scales: {
           x: { 
-            type: "category",
+           
             grid: { 
                 display: true,
                 borderDash: [5, 5]
@@ -107,7 +112,7 @@ ChartJs.register(
       
       return <section className=''>
         <h1>Sales Data</h1>
-        <Line data={data} options={options as any} />
+        <Line key={key} data={data} options={options as any} />
       </section>
 
 }
