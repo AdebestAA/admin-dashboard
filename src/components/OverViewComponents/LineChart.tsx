@@ -55,6 +55,7 @@ setKey(prev => prev + 1)
 
       const options = {
         responsive: true,
+        maintainAspectRatio: false,
         animation: {
             duration: 1000, 
             easing: "easeOutExpo",
@@ -110,9 +111,8 @@ setKey(prev => prev + 1)
 
      
       
-      return <section className=''>
-        <h1>Sales Data</h1>
-        <Line key={key} data={data} options={options as any} />
+      return <section className='min-h-[250px]'>
+        <Line  data={data} options={options as any} />
       </section>
 
 }
