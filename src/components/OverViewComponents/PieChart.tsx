@@ -4,6 +4,8 @@ import {
       Tooltip,
        Legend
      } from "chart.js";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 import { Pie } from "react-chartjs-2";
 ChartJS.register(
     ArcElement,
@@ -26,6 +28,7 @@ const pieChartLable = ["Electronics","Wears" ,"Stationaries","Laundary","Foods"]
 
 const PieChart = () => {
 
+    const pieChartRef = useRef<HTMLDivElement | null >(null)
     const data = {
         labels:pieChartLable,
         datasets:[
@@ -55,10 +58,29 @@ const PieChart = () => {
                 size:8
             }
         }
+        },
+        title:{
+            display:true,
+         text:"Sales Distribution",
+         
         }
         }
     }
-  return <section className='flex justify-center mdsm:max-h-[400px] h-[300px] w-full border-[1px] rounded-lg border-border py-2 my-4 w-full lg:w-[48%] md:w-[48%] '>
+
+
+    useEffect(()=>{
+        if (pieChartRef.current) {
+            gsap.fromTo(pieChartRef.current,
+            { opacity: 0, y: 50 },
+              { opacity: 1, y: 0, duration: 2, stagger: 0.2, ease: "power3.out" } 
+            )
+          }
+    
+     },[])
+     
+     
+
+  return <section className='flex justify-center mdsm:max-h-[400px] h-[300px] w-full border-[1px] rounded-lg border-border py-2 my-4 w-full lg:w-[48%] md:w-[48%] ' ref={pieChartRef}>
      <Pie data={data} options={options as any} />
   </section>
 }

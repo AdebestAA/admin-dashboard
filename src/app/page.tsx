@@ -5,10 +5,11 @@ import { SideBar } from "@/components/SideBar";
 import { SimpleChart } from "@/components/SimpleChart";
 import { OverViewStats } from "@/utils/OverviewStats";
 import { usePathname } from "next/navigation";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import LineChart from "@/components/OverViewComponents/LineChart";
 import PieChart from "@/components/OverViewComponents/PieChart";
+import BarChart from "@/components/OverViewComponents/BarChart";
 
 
 export default function Home() {
@@ -24,8 +25,18 @@ export default function Home() {
       duration:0.2,
       ease:"power2.out"
     })
-
   }
+
+  // Animate on mount 
+  useEffect(()=>{
+if (cardRef.current.length > 0) {
+  gsap.fromTo(cardRef.current,
+  { opacity: 0, y: 50 },
+    { opacity: 1, y: 0, duration: 2, stagger: 0.2, ease: "power3.out" } 
+  )
+
+}
+  },[])
   const handleMouseLeave = (index:number)=>{
 
     gsap.to(cardRef.current[index],{
@@ -69,6 +80,7 @@ const pathName = usePathname()
   <LineChart/>
   <PieChart/>
  </div>
+ <BarChart/>
 
     </div>
   );
