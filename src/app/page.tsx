@@ -1,6 +1,6 @@
 "use client"
 import BarChat from "@/components/BarChat";
-import PieChart from "@/components/PieChart";
+
 import { SideBar } from "@/components/SideBar";
 import { SimpleChart } from "@/components/SimpleChart";
 import { OverViewStats } from "@/utils/OverviewStats";
@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import LineChart from "@/components/OverViewComponents/LineChart";
-
+import PieChart from "@/components/OverViewComponents/PieChart";
 
 
 export default function Home() {
@@ -45,10 +45,10 @@ return ()=> clearInterval(intervalId)
 const pathName = usePathname()
   return (
     <div className="mx-auto">
-      <section className="my-4 mx-auto w-[95%] flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
+      <section className="mdsm:text-[1rem]  text-[0.8rem] my-4 mx-auto w-[95%] flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
         {OverViewStats.map((item,index)=>{
           return (
-            <div key={index} className="bg-white rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border hover:shadow-2xl cursor-pointer transition-all"
+            <div key={index} className="border-border border-[1px] rouned--lg bg-white rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border hover:shadow-2xl cursor-pointer transition-all"
             ref={(el) => {
               cardRef.current[index] = el
             }}
@@ -65,8 +65,9 @@ const pathName = usePathname()
     {/* <SideBar/> */}
  {/* Charts */}
 
- <div className=" w-[95%] mx-auto">
+ <div className=" w-[95%] mx-auto flex flex-wrap mdsm:justify-between">
   <LineChart/>
+  <PieChart/>
  </div>
 
     </div>

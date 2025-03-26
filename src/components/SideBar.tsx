@@ -77,7 +77,7 @@ else{
 
   return (
     <>
-  <div className={`bg-white fixed top-[40px] z-50  border-[1px] border-border text-text w-[200px] px-2 min-h-screen ${classGen} mdsm:hidden`} ref={navRef}>
+  <div className={`bg-white fixed top-[0px] z-50  border-[1px] border-border text-text w-[200px] px-2 min-h-screen ${classGen} mdsm:hidden`} ref={navRef}>
 <div>
 
 {SideBarMenu.map((item,index)=>{
@@ -85,7 +85,7 @@ else{
     return (
         <Link href={item.link} key={item.id} className='hover:bg-hover hover:font-semibold transition flex items-center w-4/5 rounded-lg pl-2 py-2'>
             <item.icon />
-            <span className='pl-4'>{item.name}</span>
+            <span className='pl-4 text-[0.8rem]'>{item.name}</span> 
         </Link>
     )
 })}

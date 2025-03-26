@@ -97,7 +97,7 @@ setKey(prev => prev + 1)
              } 
         },
           y: {
-            min:500,
+            min:0,
             max:6000,
              beginAtZero: false,
              drawBorder: true, 
@@ -111,7 +111,7 @@ setKey(prev => prev + 1)
 
      
       
-      return <section className='min-h-[250px]'>
+      return <section className='mdsm:max-h-[400px] h-[300px]  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] '>
         <Line  data={data} options={options as any} />
       </section>
 

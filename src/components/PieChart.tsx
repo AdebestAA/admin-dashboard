@@ -2,7 +2,7 @@
 import Chart from "chart.js/auto";
 import React, { useEffect, useRef } from 'react'
 
-const PieChart = () => {
+const PieChartww = () => {
 
     const chartRef = useRef<HTMLCanvasElement>(null)
 
@@ -34,4 +34,4 @@ const PieChart = () => {
   return <canvas ref={chartRef} />
 }
 
-export default PieChart
+export default PieChartww
