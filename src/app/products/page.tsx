@@ -1,9 +1,12 @@
+import ProductLists from '@/components/ProductsPageComponents/ProductLists'
+import ProductsStatsComponent from '@/components/ProductsPageComponents/ProductsStatsComponent'
 import React from 'react'
 
  const page = () => {
   return (
-    <div>
-        <h1>Product here</h1>
+    <div className="mx-auto ">
+      <ProductsStatsComponent/>
+      <ProductLists/>
     </div>
   )
 }

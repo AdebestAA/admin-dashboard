@@ -51,8 +51,11 @@ useEffect(()=>{
     let intervalId = null
 if (slideState) {
     
+const screenWidth = window.innerWidth
+const newWidth = screenWidth < 650 ? "280px" : screenWidth < 1000 ? "250px" : "200px"
+
     gsap.to(deskNavRef.current,{
-        width:"250px",
+        width:newWidth,
         duration: 1,
         ease: "power2.out"
     })
@@ -77,6 +80,7 @@ else{
 
   return (
     <>
+    {/* mobile */}
   <div className={`bg-white fixed top-[0px] z-50  border-[1px] border-border text-text w-[200px] px-2 min-h-screen ${classGen} mdsm:hidden`} ref={navRef}>
 <div>
 
@@ -93,7 +97,7 @@ else{
   </div>
 {/* desktop */}
 
-  <div className={`  border-[1px] border-border text-text w-[60px] mdsm:px-[2px] px-2 min-h-screen hidden mdsm:block`} ref={deskNavRef}>
+  <div className={`bg-white border-[1px] border-border text-text w-[60px] lg:pl-[6px]  mdsm:px-[2px] px-2 min-h-screen hidden mdsm:block`} ref={deskNavRef}>
 <div>
 <button
 onClick={()=>{
@@ -108,9 +112,9 @@ className='pl-2  mt-4 cursor-pointer'><FaBars size={15}/></button>
 {SideBarMenu.map((item,index)=>{
     
     return (
-        <Link href={item.link} key={item.id} className='hover:bg-hover hover:font-semibold transition flex items-center w-4/5 rounded-lg sm px-2 h-[50px]  '>
-           <span> <item.icon className={`text-lg font-bold`}/></span>
-            <span className={`transition duration-[0.5s] ml-4  ${showNavText ? "inline opacity-100": "hidden opacity-0"} `}>{item.name}</span> 
+        <Link href={item.link} key={item.id} className='hover:bg-hover  hover:font-semibold transition flex items-center w-4/5  rounded-lg sm mdlg:px-2 h-[50px] px-2 '>
+           <span> <item.icon className={`text-lg  font-bold`}/></span>
+            <span className={`transition mdlg:text-md text-[0.8rem] duration-[0.5s] ml-4  ${showNavText ? "inline opacity-100": "hidden opacity-0"} `}>{item.name}</span> 
         </Link>
     )
 })}

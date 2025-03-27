@@ -10,6 +10,7 @@ import gsap from "gsap";
 import LineChart from "@/components/OverViewComponents/LineChart";
 import PieChart from "@/components/OverViewComponents/PieChart";
 import BarChart from "@/components/OverViewComponents/BarChart";
+import { colorCombo } from "@/utils/Color";
 
 
 export default function Home() {
@@ -27,16 +28,7 @@ export default function Home() {
     })
   }
 
-  // Animate on mount 
-  useEffect(()=>{
-if (cardRef.current.length > 0) {
-  gsap.fromTo(cardRef.current,
-  { opacity: 0, y: 50 },
-    { opacity: 1, y: 0, duration: 2, stagger: 0.2, ease: "power3.out" } 
-  )
 
-}
-  },[])
   const handleMouseLeave = (index:number)=>{
 
     gsap.to(cardRef.current[index],{
@@ -46,14 +38,20 @@ if (cardRef.current.length > 0) {
     })
 
   }
-  useLayoutEffect(()=>{
-const intervalId = setInterval(()=>{
-setValueCount(prev => prev + 120)
-},1)
+  // Animate on mount 
+  useEffect(()=>{
+    if (cardRef.current.length > 0) {
+      gsap.fromTo(cardRef.current,
+      { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 2, stagger: 0.2, ease: "power3.out" } 
+      )
+    
+    }
+      },[])
 
-return ()=> clearInterval(intervalId)
-  },[valueCount])
-const pathName = usePathname()
+
+
+// const pathName = usePathname()
   return (
     <div className="mx-auto">
       <section className="mdsm:text-[1rem]  text-[0.8rem] my-4 mx-auto w-[95%] flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
@@ -67,7 +65,7 @@ const pathName = usePathname()
             onMouseLeave={()=> handleMouseLeave(index)}
 
             >
-              <aside className="flex items-center gap-x-2"><item.icon className={index == 1 ? "text-[yellow]" :index == 2 ? "text-[green]" : index == 3 ? "text-[red]" : "text-[red]" }/> <span className="text-text font-semibold">{item.name}</span></aside>
+              <aside   className="flex items-center gap-x-2"><item.icon style={{color:`${colorCombo[index]}`}} /> <span className="text-text font-semibold">{item.name}</span></aside>
               <h1 className="font-bold text-lg py-[2px] m-[2px] px-[2px]">{item.value > 50 && valueCount < item.value ? valueCount : item.value}</h1>
             </div>
           )

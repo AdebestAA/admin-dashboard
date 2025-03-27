@@ -29,12 +29,12 @@ export default function RootLayout({
     <ClientProvider>
     <html lang="en">
       <body
-        className={`bg-background font-poppins`}
+        className={`bg-background font-poppins `}
         >
 {/* desktop */}
-          <div className="mdsm:flex hidden">
+          <div className="mdsm:flex hidden w-full">
         <SideBar/>
-        <div className="w-full">
+        <div className="min-w-[50%] w-screen ">
         <Header/>
         {children}
         </div>

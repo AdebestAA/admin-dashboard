@@ -2,9 +2,9 @@ import { MdOutlineElectricBolt } from "react-icons/md";
 import { LuUsers } from "react-icons/lu";
 import { FiShoppingBag } from "react-icons/fi";
 import { FiBarChart2 } from "react-icons/fi";
-import { overViewStatsType } from "./types";
+import { statsType } from "./types";
 
-export const OverViewStats:overViewStatsType[] = [
+export const OverViewStats:statsType[] = [
        {
         id:1,
         name:"Total Sales",

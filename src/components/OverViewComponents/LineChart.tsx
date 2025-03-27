@@ -25,7 +25,7 @@ ChartJs.register(
    
 )
 
-const pastelColors = [
+const colorCombo = [
     "#FF6384", // Red
     "#36A2EB", // Blue
     "#FF9F40", // Orange
@@ -131,7 +131,7 @@ setKey(prev => prev + 1)
  },[])
      
       
-      return <section className='mdsm:max-h-[400px] h-[300px]  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] ' ref={lineChartRef}>
+      return <section className='mdsm:max-h-[400px] h-[300px] bg-white  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] ' ref={lineChartRef}>
         <Line  data={data} options={options as any} />
       </section>
 
