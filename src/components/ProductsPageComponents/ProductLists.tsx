@@ -17,34 +17,34 @@ const products:productsListType[] = [
 const ProductLists = () => {
     const inputRef = useRef<HTMLInputElement>(null)
   return (
-    <div className='w-[95%]  mx-auto my-16 bg-[green] rouded-lg border-2 px-2'>
-        <header className='flex justify-between'>
+    <div className='w-[95%]  mx-auto my-16  rounded-lg border-[1px] px-2 py-2'>
+        <header className='flex justify-between text-sm'>
             <h1>Products List</h1>
-           <aside className='flex items-center'>
-            <span><FiSearch /></span>
-            <input type="text" className='bg-[gray]' ref={inputRef} />
+           <aside className='flex items-center active-red bg-hover border-[2px] rounded-md border-gray'>
+            <span className='p-[4px] '><FiSearch /></span>
+            <input type="text" className='bg-border outline-none' ref={inputRef} />
             </aside>
         </header>
-        <div className='overflow-x-scroll  max-w-full scrollClass' >
-            <header className='flex justify-between  bg-[yellow]'>
+        <div className='overflow-x-scroll  max-w-full scrollClass py-4 ' >
+            <header className='flex justify-between text-sm w-[1000px] uppercase border-b-[1px] border-border font-semibold'>
                 <span className='min-w-[200px]'>name</span>
-                <span className='min-w-[150px] bg-[blue]'>category</span>
+                <span className='min-w-[150px]'>category</span>
                 <span className='min-w-[150px]'>price</span>
                 <span className='min-w-[150px]'>available</span>
                 <span className='min-w-[150px]'>sold</span>
-                <span className='min-w-[150px]'>action</span>
+                <span className='min-w-[150px]'>actions</span>
             </header>
-            <section className=''>
+            <section className='space-y-2 my-2'>
                 {products.map((item:productsListType,index:number)=>{
-return <aside key={index} className='flex justify-between '>
+return <aside key={index} className='flex text-sm justify-between w-[1000px] border-b-[1px] border-border'>
     <span className='min-w-[200px]'>{item.name}</span>
     <span className='min-w-[150px]'>{item.category}</span>
-    <span className='min-w-[150px]'>{item.price}</span>
+    <span className='min-w-[150px]'>${item.price}</span>
     <span className='min-w-[150px]'>{item.available}</span>
     <span className='min-w-[150px]'>{item.sold}</span>
-    <div className='flex min-w-[150px]'>
-        <CiEdit/>
-        <MdDeleteOutline/>
+    <div className='flex min-w-[150px] gap-x-2'>
+        <CiEdit className='text-orange cursor-pointer'/>
+        <MdDeleteOutline className='text-red cursor-pointer'/>
     </div>
 </aside>
 

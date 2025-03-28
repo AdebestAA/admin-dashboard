@@ -48,6 +48,9 @@
   --color-background:#f8f5f5;
   --color-hover:#efeeed;
   --color-text:#535351;
+  --color-red: #FF6384;
+  --color-orange:#FF9F40;
+  --color-gray:#C9CBCF;
   --breakpoint-xxs: 330px;
   --breakpoint-xs: 370px;
   --breakpoint-sm: 400px;

@@ -49,7 +49,13 @@ export default function Home() {
     }
       },[])
 
+  useLayoutEffect(()=>{
+const intervalId = setInterval(()=>{
+setValueCount(prev => prev + 120)
+},1)
 
+return ()=> clearInterval(intervalId)
+  },[valueCount])
 
 // const pathName = usePathname()
   return (
