@@ -1,3 +1,4 @@
+"use client"
 import { colorCombo } from "@/utils/Color";
 import { 
     Chart as ChartJS,

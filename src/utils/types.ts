@@ -25,3 +25,12 @@ export type productsListType = {
         available: number,
         sold: number
 }
+
+
+export type UsersListType = {
+        id: number;
+        name: string;
+        email: string;
+        role: "Admin" | "Member";
+        status: "Active" | "Inactive";
+      };

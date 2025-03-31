@@ -1,10 +1,11 @@
 "use client"
 import { colorCombo } from '@/utils/Color'
-import { productStats } from '@/utils/ProductStats'
+
+import { usersStats } from '@/utils/UsersStats'
 import gsap from 'gsap'
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
-const ProductsStatsComponent = () => {
+const UsersStatsComponent = () => {
      const [valueCount,setValueCount] = useState<number>(0)
   const cardRef = useRef<(HTMLDivElement | null)[]>([])
 
@@ -59,7 +60,7 @@ gsap.fromTo(cardRef.current,
 
   return (
           <section className="mdsm:text-[1rem]  text-[0.8rem] my-4 mx-auto w-[95%] flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
-            {productStats.map((item,index)=>{
+            {usersStats.map((item,index)=>{
               return (
                 <div key={index} className="border-border border-[1px] rouned--lg bg-white rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border hover:shadow-2xl cursor-pointer transition-all"
                 ref={(el) => {
@@ -69,7 +70,7 @@ gsap.fromTo(cardRef.current,
                 onMouseLeave={()=> handleMouseLeave(index)}
     
                 >
-                  <aside   className="flex items-center gap-x-[4px]"><item.icon  style={{color:`${colorCombo[index]}`}} /><span className="text-text font-semibold ">{item.name}</span></aside>
+                  <aside   className={`flex items-center gap-x-[4px] ${item.name.toLocaleLowerCase().trim().replace(" ","") === "totalusers" ? "text-[#36A2EB]" : item.name.toLocaleLowerCase().trim().replace(" ","") === "newusers" ? "text-[#9966FF]" : item.name.toLocaleLowerCase().trim().replace(" ","") === "activeusers" ? "text-[#FF9F40]" : "text-[#FF6384]" } `}><item.icon  /><span className="text-text font-semibold ">{item.name}</span></aside>
                   <h1 className="font-bold text-lg py-[2px] m-[2px] px-[2px]"><span>{item.name.toLocaleLowerCase().trim().replace(" ","") === "totalrevenue" ? "$" : ""}</span><span>{item.value > 50 && valueCount < item.value ? valueCount : item.value}</span></h1>
                 </div>
               )
@@ -78,4 +79,4 @@ gsap.fromTo(cardRef.current,
   )
 }
 
-export default ProductsStatsComponent
+export default UsersStatsComponent

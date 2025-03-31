@@ -87,7 +87,7 @@ else{
 {SideBarMenu.map((item,index)=>{
     
     return (
-        <Link href={item.link} key={item.id} className='hover:bg-hover hover:font-semibold transition flex items-center w-4/5 rounded-lg pl-2 py-2'>
+        <Link onClick={()=> dispatch(closeSlide())} href={item.link} key={item.id} className='hover:bg-hover hover:font-semibold transition flex items-center w-4/5 rounded-lg pl-2 py-2'>
             <item.icon />
             <span className='pl-4 text-[0.8rem]'>{item.name}</span> 
         </Link>

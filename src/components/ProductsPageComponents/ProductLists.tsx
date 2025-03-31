@@ -1,9 +1,10 @@
 "use client"
 import { productsListType } from '@/utils/types';
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FiSearch } from "react-icons/fi";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
+import gsap from 'gsap';
 
 const products:productsListType[] = [
     { id: 1, name: "Wireless Headphones", price: 59.99, category: "Electronics", available: 25, sold: 75 },
@@ -16,17 +17,36 @@ const products:productsListType[] = [
   ];
 const ProductLists = () => {
     const inputRef = useRef<HTMLInputElement>(null)
+    const listContainerRef = useRef<HTMLDivElement>(null)
+
+
+
+    useEffect(()=>{
+if (!listContainerRef.current) {
+    return
+}
+        gsap.fromTo(listContainerRef.current,
+            {
+              opacity:0,
+              y:10
+            },
+            {
+              opacity:1,
+              y:0
+            }
+        )
+    },[])
   return (
-    <div className='w-[95%]  mx-auto my-16  rounded-lg border-[1px] px-2 py-2'>
-        <header className='flex justify-between text-sm'>
-            <h1>Products List</h1>
+    <div className='w-[95%] bg-white mx-auto my-16  rounded-lg border-gray border-[1px] px-2 py-2' ref={listContainerRef}>
+        <header className='flex justify-between text-sm' >
+            <h1 className='font-semibold'>Products List</h1>
            <aside className='flex items-center active-red bg-hover border-[2px] rounded-md border-gray'>
             <span className='p-[4px] '><FiSearch /></span>
             <input type="text" className='bg-border outline-none' ref={inputRef} />
             </aside>
         </header>
         <div className='overflow-x-scroll  max-w-full scrollClass py-4 ' >
-            <header className='flex justify-between text-sm w-[1000px] uppercase border-b-[1px] border-border font-semibold'>
+            <header className='flex justify-between text-sm min-w-[1000px] uppercase border-b-[1px] border-border font-semibold'>
                 <span className='min-w-[200px]'>name</span>
                 <span className='min-w-[150px]'>category</span>
                 <span className='min-w-[150px]'>price</span>
@@ -36,15 +56,15 @@ const ProductLists = () => {
             </header>
             <section className='space-y-2 my-2'>
                 {products.map((item:productsListType,index:number)=>{
-return <aside key={index} className='flex text-sm justify-between w-[1000px] border-b-[1px] border-border'>
-    <span className='min-w-[200px]'>{item.name}</span>
-    <span className='min-w-[150px]'>{item.category}</span>
-    <span className='min-w-[150px]'>${item.price}</span>
-    <span className='min-w-[150px]'>{item.available}</span>
-    <span className='min-w-[150px]'>{item.sold}</span>
-    <div className='flex min-w-[150px] gap-x-2'>
-        <CiEdit className='text-orange cursor-pointer'/>
-        <MdDeleteOutline className='text-red cursor-pointer'/>
+return <aside key={index} className={`${index % 2 == 0 ? "bg-border" : ""} flex text-sm justify-between min-w-[1000px] border-b-[1px] border-border`}>
+    <span className='min-w-[200px] py-2 pl-2'>{item.name}</span>
+    <span className='min-w-[150px] py-2 pl-2'>{item.category}</span>
+    <span className='min-w-[150px] py-2 pl-2'>${item.price}</span>
+    <span className='min-w-[150px] py-2 pl-2'>{item.available}</span>
+    <span className='min-w-[150px] py-2 pl-2'>{item.sold}</span>
+    <div className='flex min-w-[150px] gap-x-2 py-2 pl-2'>
+        <CiEdit className='text-orange cursor-pointer hover:opacity-60' size={18}/>
+        <MdDeleteOutline className='text-red cursor-pointer hover:opacity-60' size={18}/>
     </div>
 </aside>
 
