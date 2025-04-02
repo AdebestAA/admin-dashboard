@@ -106,12 +106,17 @@ setKey(prev => prev + 1)
            
             grid: { 
                 display: true,
-                borderDash: [5, 5]
+                borderDash: [5, 5],
+                color:"gray"
              } 
         },
           y: {
             min:0,
             max:6000,
+            grid:{
+              color:"gray",
+
+            },
              beginAtZero: false,
              drawBorder: true, 
              drawTicks: true,

@@ -48,9 +48,17 @@ const barChartRef = useRef<HTMLDivElement | null >(null)
         maintainAspectRatio:false,
         scales:{
             y:{
+              grid:{
+          color:"gray"
+              },
                 min:5000,
                 max:20000,
          beginAtZero:true           
+            },
+            x:{
+              grid:{
+                color:"gray"
+              }
             }
         },
         plugins:{

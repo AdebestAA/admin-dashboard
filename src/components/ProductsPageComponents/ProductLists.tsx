@@ -56,7 +56,7 @@ if (!listContainerRef.current) {
             </header>
             <section className='space-y-2 my-2'>
                 {products.map((item:productsListType,index:number)=>{
-return <aside key={index} className={`${index % 2 == 0 ? "bg-border dark:bg-Dborder" : ""} flex text-sm justify-between min-w-[1000px] border-b-[1px] border-border`}>
+return <aside key={index} className={`${index % 2 == 0 ? "bg-border dark:bg-[#3e4248]" : ""} flex text-sm justify-between min-w-[1000px] border-b-[1px] border-border`}>
     <span className='min-w-[200px] py-2 pl-2'>{item.name}</span>
     <span className='min-w-[150px] py-2 pl-2'>{item.category}</span>
     <span className='min-w-[150px] py-2 pl-2'>${item.price}</span>

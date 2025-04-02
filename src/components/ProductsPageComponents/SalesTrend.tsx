@@ -71,7 +71,7 @@ x:{
 grid:{
     display:true,
     borderDash:[10,1],
-    color:"#FF6384",
+    color:"gray",
 
 },
 ticks:{
@@ -94,7 +94,7 @@ title:{
     grid:{
     display:true,
     borderDash:[10,3],
-    color:"#FF6384",
+    color:"gray",
     },
     title:{
         text:"Sales",

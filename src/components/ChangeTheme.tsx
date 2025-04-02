@@ -38,10 +38,12 @@ if (!theme) {
 }
   return (
 <>
+{/* Mobile */}
 <button className='text-Dtext hidden mdsm:inline cursor-pointer' onClick={()=> setTheme(theme === "light" ? "dark" : "light")}>
-    {theme === "light" ? <MdOutlineDarkMode className='text-Dtext text-text' size={22} /> : <CiLight size={22} className='text-Dtext text-text' />}
+    {theme === "light" ? <MdOutlineDarkMode className='text-Dtext text-text' size={22} /> : <CiLight size={22} className='text-Dtext text-white' />}
 </button>
-<button className='text-Dtext mdsm:hidden inline rounded-lg fixed left-[90%] top-[90%] bg-white dark:bg-Dwhite z-10 p-2 border-[gray] dar:border-Dborder border-[1px] cursor-pointer' onClick={()=> setTheme(theme === "light" ? "dark" : "light")}>
+{/* Mobile */}
+<button className='text-Dtext mdsm:hidden inline rounded-lg fixed left-[80%] top-[90%] bg-white dark:bg-Dwhite z-10 p-2 border-[gray] dar:border-Dborder border-[1px] cursor-pointer' onClick={()=> setTheme(theme === "light" ? "dark" : "light")}>
     {theme === "light" ? <MdOutlineDarkMode className='text-Dtext text-text' size={22} /> : <CiLight size={22} className='text-Dtext text-text' />}
 </button>
 </>
