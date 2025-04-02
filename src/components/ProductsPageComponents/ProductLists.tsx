@@ -37,12 +37,12 @@ if (!listContainerRef.current) {
         )
     },[])
   return (
-    <div className='w-[95%] bg-white mx-auto my-16  rounded-lg border-gray border-[1px] px-2 py-2' ref={listContainerRef}>
+    <div className='w-[95%] bg-white dark:bg-Dwhite mx-auto my-16  rounded-lg border-gray border-[1px] px-2 py-2' ref={listContainerRef}>
         <header className='flex justify-between text-sm' >
             <h1 className='font-semibold'>Products List</h1>
-           <aside className='flex items-center active-red bg-hover border-[2px] rounded-md border-gray'>
-            <span className='p-[4px] '><FiSearch /></span>
-            <input type="text" className='bg-border outline-none' ref={inputRef} />
+           <aside className='flex items-center active-red bg-hover  border-[2px] rounded-md border-gray'>
+            <span className='p-[4px] '><FiSearch className='text-text dark:text-black' /></span>
+            <input type="text" className='bg-border dark:bg-Dborder outline-none' ref={inputRef} />
             </aside>
         </header>
         <div className='overflow-x-scroll  max-w-full scrollClass py-4 ' >
@@ -56,7 +56,7 @@ if (!listContainerRef.current) {
             </header>
             <section className='space-y-2 my-2'>
                 {products.map((item:productsListType,index:number)=>{
-return <aside key={index} className={`${index % 2 == 0 ? "bg-border" : ""} flex text-sm justify-between min-w-[1000px] border-b-[1px] border-border`}>
+return <aside key={index} className={`${index % 2 == 0 ? "bg-border dark:bg-Dborder" : ""} flex text-sm justify-between min-w-[1000px] border-b-[1px] border-border`}>
     <span className='min-w-[200px] py-2 pl-2'>{item.name}</span>
     <span className='min-w-[150px] py-2 pl-2'>{item.category}</span>
     <span className='min-w-[150px] py-2 pl-2'>${item.price}</span>

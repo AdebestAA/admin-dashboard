@@ -11,13 +11,14 @@ import LineChart from "@/components/OverViewComponents/LineChart";
 import PieChart from "@/components/OverViewComponents/PieChart";
 import BarChart from "@/components/OverViewComponents/BarChart";
 import { colorCombo } from "@/utils/Color";
+import { Loader } from "@/components/CSSLoader/Loader";
 
 
 export default function Home() {
   const [valueCount,setValueCount] = useState<number>(0)
   const cardRef = useRef<(HTMLDivElement | null)[]>([])
   const [loaded,setLoaded] = useState<boolean>(false)
-
+// const [loading,setLoading] = useState<boolean>(true)
 
 
   const handleMouseEnter = (index:number)=>{
@@ -60,13 +61,18 @@ setValueCount(prev => prev + 120)
 return ()=> clearInterval(intervalId)
   },[valueCount])
 
+
+
+  // if (loading) {
+  //   return <Loader/>
+  // }
 // const pathName = usePathname()
   return (
     <div className="mx-auto">
       { <section className="mdsm:text-[1rem]  text-[0.8rem] my-4 mx-auto w-[95%] flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
         {OverViewStats.map((item,index)=>{
           return (
-            <div key={index} className="border-border border-[1px] rouned--lg bg-white rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border hover:shadow-2xl cursor-pointer transition-all"
+            <div key={index} className="border-border border-[1px] rouned--lg bg-white dark:bg-Dwhite rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border dark:hover:shadow-Dborder hover:shadow-2xl dark:hover:shadow-lg cursor-pointer transition-all"
             ref={(el) => {
               cardRef.current[index] = el
             }}

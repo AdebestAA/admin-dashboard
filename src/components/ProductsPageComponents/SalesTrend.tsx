@@ -138,7 +138,7 @@ title:{
     }
 }
   return (
-    <div className='mdsm:max-h-[400px] h-[300px] bg-white  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] '>
+    <div className='mdsm:max-h-[400px] h-[300px] bg-white dark:bg-Dwhite w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] '>
         <Line data={data as any} options={options as any}  />
     </div>
   )

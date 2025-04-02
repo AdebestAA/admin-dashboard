@@ -2,6 +2,7 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -36,6 +37,33 @@
 } */
 
 
+:root{
+  --color-white:#ffffff;
+  --color-border:#e9e5e5;
+  --color-primary: #ff0000;
+  --color-background:#f8f5f5;
+  --color-hover:#efeeed;
+  --color-text:#535351;
+  --color-red: #FF6384;
+  --color-orange:#FF9F40;
+  --color-gray:#C9CBCF;
+
+}
+
+[data-theme="dark"] {
+  --color-darks: #0F172A; 
+  --color-Dborder: #5C6777; 
+  --color-Dprimary: #ff4d4d; 
+  --color-Dbackground: #020617; 
+  --color-Dhover: #2563EB; 
+  --color-Dtext: #F8FAFC; 
+  --color-Dred: #ff4c66; 
+  --color-Dorange: #ff8c3e; 
+  --color-Dgray: #8b8b8b; 
+}
+
+
+
 .custom-style{
   color: #313131;
 }
@@ -51,6 +79,17 @@
   --color-red: #FF6384;
   --color-orange:#FF9F40;
   --color-gray:#C9CBCF;
+  /* DarkMode */
+  --color-Dwhite: #0F172A; 
+  --color-Dborder: #5C6777; 
+  --color-Dprimary: #ff4d4d; 
+  --color-Dbackground: #020617; 
+  --color-Dhover: #2563EB; 
+  --color-Dtext: #F8FAFC; 
+  --color-Dred: #ff4c66; 
+  --color-Dorange: #ff8c3e; 
+  --color-Dgray: #8b8b8b; 
+  /* breakpoint */
   --breakpoint-xxs: 330px;
   --breakpoint-xs: 370px;
   --breakpoint-sm: 400px;
@@ -63,3 +102,5 @@
   --font-poppins: ["Poppins", "sans-serif"],
   
 }
+
+

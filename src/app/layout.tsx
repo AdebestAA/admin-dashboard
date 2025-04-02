@@ -27,9 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <ClientProvider>
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`bg-background font-poppins `}
+        className={`transition-all duration-300 dark:bg-Dbackground  bg-background  font-poppins text-text dark:text-Dtext`}
         >
 {/* desktop */}
           <div className="mdsm:flex hidden w-full">

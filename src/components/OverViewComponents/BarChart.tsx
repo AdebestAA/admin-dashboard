@@ -78,7 +78,7 @@ const barChartRef = useRef<HTMLDivElement | null >(null)
     
      },[])
      
-  return <section className='flex bg-white justify-center mdsm:max-h-[400px] h-[300px] w-[95%] border-[1px] rounded-lg border-border py-2 my-4 mx-auto ' ref={barChartRef}>
+  return <section className='flex bg-white dark:bg-Dwhite justify-center mdsm:max-h-[400px] h-[300px] w-[95%] border-[1px] rounded-lg border-border py-2 my-4 mx-auto ' ref={barChartRef}>
     <Bar data={data} options={options as any} />
   </section>
 }
