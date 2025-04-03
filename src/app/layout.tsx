@@ -1,9 +1,13 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import ClientProvider from "@/components/ClientProvider";
 import { SideBar } from "@/components/SideBar";
+
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,8 +50,10 @@ export default function RootLayout({
           <div className="mdsm:hidden py-0">
           <Header/>
           <SideBar/>
+          
         {children}
           </div>
+
       </body>
     </html>
         </ClientProvider>

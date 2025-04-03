@@ -84,7 +84,7 @@ const UsersListComponent = () => {
         <span className='min-w-[200px] py-2 pl-2'>{item.name}</span>
         <span className='min-w-[210px] py-2  '>{item.email}</span>
         <span className='min-w-[150px] py-2 '>{item.role}</span>
-        <span className={`min-w-[150px] py-2 ${item.status === "Active" ? "text-[green]" : "text-[red]"}`}>{item.status}</span>
+        <span className={`min-w-[150px] py-2 ${item.status === "Active" ? "text-[#00ac00]" : "text-red"}`}>{item.status.toLocaleLowerCase()}</span>
         <div className='flex min-w-[150px] gap-x-2 py-2 pl-2'>
             <CiEdit className='text-orange cursor-pointer hover:opacity-60' size={18}/>
             <MdDeleteOutline className='text-red cursor-pointer hover:opacity-60' size={18}/>

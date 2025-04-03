@@ -5,5 +5,6 @@ export const colorCombo = [
     "#4BC0C0", // Teal
     "#9966FF", // Purple
     "#FFCE56", // Yellow
-    "#C9CBCF", // Gray
+    "#C9CBCF", // Gray,
+    "#00ac00",  //green
 ];
