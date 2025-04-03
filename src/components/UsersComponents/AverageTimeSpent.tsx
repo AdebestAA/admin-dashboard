@@ -72,7 +72,7 @@ color:"#36A2EB"
   };
 
   return (
-    <div className="mx-auto w-[95%] h-[400px] flex justify-center items-center my-4">
+    <div className="flex bg-white dark:bg-Dwhite justify-center mdsm:max-h-[400px] h-[300px] w-[95%] border-[1px] rounded-lg border-border py-2 my-4 mx-auto">
       <div ref={chartRef} className="w-full h-full">
         <PolarArea data={data} options={options as any} />
       </div>
