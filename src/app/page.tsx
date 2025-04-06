@@ -42,7 +42,9 @@ export default function Home() {
   }
   // Animate on mount 
   useEffect(()=>{
-
+    if (!cardRef || !cardRef.current || cardRef.current.length == 0) {
+      return
+    }
     setLoaded(true)
     if (cardRef.current.length > 0) {
       gsap.fromTo(cardRef.current,
@@ -72,7 +74,7 @@ return ()=> clearInterval(intervalId)
       { <section className="mdsm:text-[1rem]  text-[0.8rem] my-4 mx-auto w-[95%] flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
         {OverViewStats.map((item,index)=>{
           return (
-            <div key={index} className="border-border border-[1px] rouned--lg bg-white dark:bg-Dwhite rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border dark:hover:shadow-Dborder hover:shadow-2xl dark:hover:shadow-lg cursor-pointer transition-all"
+            <div key={index} className="border-border border-[1px] rouned--lg bg-white dark:bg-Dwhite rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border dark:hover:shadow-Dborder hover:shadow-2xl dark:hover:shadow-lg cursor-pointer transition-all opacity-0"
             ref={(el) => {
               cardRef.current[index] = el
             }}

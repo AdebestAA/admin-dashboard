@@ -67,7 +67,11 @@ color:"#36A2EB"
       }
     },
     scales: {
-      r: { beginAtZero: true },
+      r: {
+         beginAtZero: true,
+         grid:{color:"gray"}, 
+          
+       },
     },
   };
 

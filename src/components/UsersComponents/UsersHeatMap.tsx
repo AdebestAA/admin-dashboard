@@ -47,8 +47,8 @@ import {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-          x: { stacked: true }, 
-          y: { stacked: true, beginAtZero: true },
+          x: { stacked: true,grid:{color:"gray"}, }, 
+          y: { stacked: true, beginAtZero: true,grid:{color:"gray"},  },
         },
         plugins: {
           legend: { position: "bottom" }, 

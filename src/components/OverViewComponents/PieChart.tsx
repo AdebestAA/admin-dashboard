@@ -63,6 +63,9 @@ const PieChart = () => {
 
 
     useEffect(()=>{
+        if (!pieChartRef || !pieChartRef.current) {
+            return
+          }
         if (pieChartRef.current) {
             gsap.fromTo(pieChartRef.current,
             { opacity: 0, y: 50 },
@@ -74,7 +77,7 @@ const PieChart = () => {
      
      
 
-  return <section className='flex bg-white dark:bg-Dwhite justify-center mdsm:max-h-[400px] h-[300px] w-full border-[1px] rounded-lg border-border py-2 my-4 w-full lg:w-[48%] md:w-[48%] ' ref={pieChartRef}>
+  return <section className='flex bg-white dark:bg-Dwhite justify-center mdsm:max-h-[400px] h-[300px] w-full border-[1px] rounded-lg border-border py-2 my-4 w-full lg:w-[48%] md:w-[48%]  opacity-0' ref={pieChartRef}>
      <Pie data={data} options={options as any} />
   </section>
 }

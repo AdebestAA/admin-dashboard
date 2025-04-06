@@ -22,7 +22,7 @@ const ProductLists = () => {
 
 
     useEffect(()=>{
-if (!listContainerRef.current) {
+if (!listContainerRef || !listContainerRef.current) {
     return
 }
         gsap.fromTo(listContainerRef.current,
@@ -37,7 +37,7 @@ if (!listContainerRef.current) {
         )
     },[])
   return (
-    <div className='w-[95%] bg-white dark:bg-Dwhite mx-auto my-16  rounded-lg border-gray border-[1px] px-2 py-2' ref={listContainerRef}>
+    <div className='w-[95%] bg-white dark:bg-Dwhite mx-auto my-16  rounded-lg border-gray border-[1px] px-2 py-2 opacity-0' ref={listContainerRef}>
         <header className='flex justify-between text-sm' >
             <h1 className='font-semibold'>Products List</h1>
            <aside className='flex items-center active-red bg-hover  border-[2px] rounded-md border-gray'>

@@ -43,7 +43,7 @@ return ()=> clearInterval(intervalId)
     // Animate on Mount
 
     useEffect(()=>{ 
-      if (!cardRef.current || cardRef.current.length == 0) {
+      if (!cardRef || !cardRef.current || cardRef.current.length == 0) {
         return
       }
 gsap.fromTo(cardRef.current,
