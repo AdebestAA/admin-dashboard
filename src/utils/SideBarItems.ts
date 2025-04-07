@@ -30,24 +30,12 @@ export const SideBarMenu : sideBarMenuTypes [ ] = [
     },
     {
         id:4,
-        name:"Sales",
-        link:"/sales",
-        icon: LiaSellcast
-    },
-    {
-        id:5,
-        name:"Orders",
-        link:"/orders",
-        icon:  MdOutlineShoppingCart
-    },
-    {
-        id:6,
         name:"Analytics",
         link:"/analytics",
         icon: IoAnalytics
     },
     {
-        id:7,
+        id:5,
         name:"Settings",
         link:"/settings",
         icon: CiSettings 

@@ -25,9 +25,10 @@ console.log(pathName);
 
 
   return (
-    <div className='transition-all duration-300 bg-white dark:bg-Dwhite border-[1px] border-border dark:border-Dborder h-[40px]  w-full flex justify-between py-2 items-center mdsm:px-4 px-4'>
-      <h1 className='capitalize'>{pathName === "/" ? "Overview" : pathName.slice(1,pathName.length)}</h1>
+    <div className='transition-all duration-300 bg-white dark:bg-Dwhite border-[1px] border-border dark:border-Dborder h-[40px]  w-full flex justify-between py-2 items-center mdsm:px-4 lg:px-8 px-4'>
+      <h1 className='capitalize font-bold text-[1.1rem]'>{pathName === "/" ? "Overview" : pathName.slice(1,pathName.length)}</h1>
       <ChangeTheme/>
+      {/* mobile bar */}
 <button className='mdsm:hidden' onClick={()=>{
 if (slideState) {
     dispatch(closeSlide())

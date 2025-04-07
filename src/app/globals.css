@@ -63,7 +63,7 @@
 }
 
 .co{
-  color: #00ac00;
+  color: #f724242b;
 }
 
 .custom-style{
@@ -81,6 +81,7 @@
   --color-red: #FF6384;
   --color-orange:#FF9F40;
   --color-gray:#C9CBCF;
+  --color-green:#5af75a;
   /* DarkMode */
   --color-Dwhite: #0F172A; 
   --color-Dborder: #5C6777; 
