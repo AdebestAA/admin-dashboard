@@ -1,8 +1,7 @@
 "use client"
-import BarChat from "@/components/BarChat";
 
 import { SideBar } from "@/components/SideBar";
-import { SimpleChart } from "@/components/SimpleChart";
+
 import { OverViewStats } from "@/utils/OverviewStats";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";

@@ -28,9 +28,23 @@ export type productsListType = {
 
 
 export type UsersListType = {
-        id: number;
-        name: string;
-        email: string;
-        role: "Admin" | "Member";
-        status: "Active" | "Inactive";
+        id: number,
+        name: string,
+        email: string,
+        role: "Admin" | "Member",
+        status: "Active" | "Inactive",
       };
+
+        type eachCategoryType = {
+        label: string[];
+        target: number[];
+        revenue: number[];
+        };
+
+        export   type revenueVsTargetDataType = {
+       
+        thisWeek: eachCategoryType,
+        thisMonth: eachCategoryType,
+        lastMonth: eachCategoryType,
+        lastSixMonths: eachCategoryType,
+        }
