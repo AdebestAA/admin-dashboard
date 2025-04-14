@@ -11,11 +11,11 @@ const page = () => {
     <div className='mx-auto'>
         <AnalyticsStatsComponent />
         <div className='w-[95%] mx-auto flex flex-wrap mdsm:justify-between'>
-        {/* <RevenueVsTarget/>
-        <Performance/> */}
+        <RevenueVsTarget/>
+         <Performance/>
         </div>
         <div className='w-[95%] mx-auto flex flex-wrap mdsm:justify-between'>
-         {/* <ContinentsCategorization/> */}
+         <ContinentsCategorization/>
          <TimeSpent/>
         </div>
     </div>
