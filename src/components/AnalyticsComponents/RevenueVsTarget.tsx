@@ -13,6 +13,8 @@ import {
 } from "chart.js"
 import { revenueVsTargetDataType } from "@/utils/types"
 import { useState } from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "@/store"
 Chartjs.register(
     LineElement,
     LinearScale,
@@ -54,7 +56,10 @@ const RevenueVsTarget = () => {
 
     const [selectCategory,setSelectCategory] = useState<keyof typeof revenueVsTargetData>("thisWeek")
     
-
+    const darkModeState = useSelector((state:RootState)=>{
+        return state.DarkModeCheck
+        })
+    
     const data = {
         labels:revenueVsTargetData[selectCategory].label,
         datasets:[
@@ -102,7 +107,7 @@ x: {
 grid:{
     display:true,
     orderDash:[10,1],
-    color:"gray",
+    color:darkModeState ?  "rgb(198, 198, 198)" : "rgb(85, 85, 85)",
 },
 },
         }
@@ -110,7 +115,7 @@ grid:{
   return (
     <div className='mdsm:max-h-[400px]  bg-white dark:bg-Dwhite  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] '>
         <header className="flex items-center justify-between px-2">
-            <h1 className="font-semibold">Revenue Vs Target</h1>
+            <h1 className="font-semibold text-[0.85rem]">Revenue Vs Target</h1>
 <select className="dark:bg-Dborder bg-Dgray text-Dtext rounded-lg pr-2 py-[2px] outline-none " name="" id="" onChange={(e)=>{
     setSelectCategory(e.target.value as keyof typeof revenueVsTargetData)
    

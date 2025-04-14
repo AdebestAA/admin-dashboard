@@ -63,7 +63,7 @@ gsap.fromTo(cardRef.current,
           <section className="mdsm:text-[1rem]  text-[0.8rem] my-4 mx-auto w-[95%] flex flex-wrap justify-between gap-y-6 py-4 gap-x-2">
             {AnalyticsStats.map((item,index)=>{
               return (
-                <div key={index} className=" flex  justify-between border-border dark:border-Dborder border-[1px] rouned--lg bg-white dark:bg-Dwhite rounded-lg md:max-w-[20%] mdsm:min-w-[200px] w-full p-4 hover:shadow-border dark:hover:shadow-Dborder hover:shadow-2xl dark:hover:shadow-md dark:hover:shadow-lg cursor-pointer transition-all "
+                <div key={index} className=" flex  justify-between border-border dark:border-Dborder border-[1px] rouned--lg bg-white dark:bg-Dwhite rounded-lg md:max-w-[30%] mdsm:min-w-[250px] w-full p-4 hover:shadow-border dark:hover:shadow-Dborder hover:shadow-2xl dark:hover:shadow-md dark:hover:shadow-lg cursor-pointer transition-all "
                 ref={(el) => {
                   cardRef.current[index] = el
                 }}

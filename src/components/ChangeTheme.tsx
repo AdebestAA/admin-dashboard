@@ -2,9 +2,17 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { MdOutlineDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
+import { useDispatch, useSelector } from 'react-redux';
+import { appDispatch, RootState } from '@/store';
+import { returnFalse, returnTrue } from '@/store/slices/DarkMode';
 
 const ChangeTheme = () => {
-    "use client"
+   
+    const dispatch = useDispatch<appDispatch>()
+    const darkModeState = useSelector((state:RootState)=>{
+
+        return state.DarkModeCheck
+    })
     const [theme,setTheme] = useState<string>(()=>{
         if (typeof window !== "undefined") {
             return localStorage.getItem("theme") || "light";
@@ -12,20 +20,39 @@ const ChangeTheme = () => {
           return "light";
     })
     useEffect(()=>{
+        if (typeof window !== "undefined") {
         
-        if (theme === "dark") {
-            document.documentElement.classList.add("dark")
-        }
-        else{
             
-            document.documentElement.classList.remove("dark")
+            if (theme === "dark") {
+                document.documentElement.classList.add("dark")
+                
+            }
+            else{
+                
+                document.documentElement.classList.remove("dark")
+              
         }
 
         localStorage.setItem("theme",theme)
-
-        console.log(theme);
         
+        console.log(darkModeState);
+        
+        
+    }
     },[theme])
+
+
+        useEffect(()=>{
+    if (typeof window !== "undefined") {
+        
+        if (document.documentElement.classList.contains("dark")) {
+            dispatch(returnTrue())
+        }
+        else{
+            dispatch(returnFalse())
+        }
+    }
+        },[theme])
 
 
 if (typeof window == "undefined") {
