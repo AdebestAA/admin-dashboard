@@ -57,7 +57,7 @@ const Performance = () => {
         }
       }
   return (
-    <div className='mdsm:max-h-[400px]   bg-white dark:bg-Dwhite  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] flex items-center justify-center'>
+    <div className='mdsm:max-h-[400px] min-h-[300px]  bg-white dark:bg-Dwhite  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] flex items-center justify-center'>
     <Doughnut data={data} options={options as any} />
     </div>
   )

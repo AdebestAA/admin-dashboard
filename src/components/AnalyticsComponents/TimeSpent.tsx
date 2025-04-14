@@ -10,8 +10,8 @@ import {
     Title
 }    from "chart.js"
 import { colorCombo } from '@/utils/Color'
-import { useDispatch, useSelector } from 'react-redux'
-import { appDispatch, RootState } from '@/store'
+import {  useSelector } from 'react-redux'
+import {  RootState } from '@/store'
 
 ChartJs.register(
     RadialLinearScale,
@@ -23,31 +23,28 @@ ChartJs.register(
 
 const TimeSpent = () => {
 
-    const [datatForHoursSpent,setDataHoursSpent] = useState<number[]>([40,70,50,81,43,71])
-    const dispatch = useDispatch<appDispatch>()
-    const [checkDarkMode,setCheckDarkMode] = useState<boolean>(document.documentElement.classList.contains("dark"))
+    const [datatForHoursSpent,setDataHoursSpent] = useState<number[] | null>(null)
+
+   
         const darkModeState = useSelector((state:RootState)=>{
         return state.DarkModeCheck
         })
 
-
+useEffect(()=>{
+setDataHoursSpent([40,70,50,81,43,71])
+},[])
         
-    // useEffect(()=>{
 
-    //     console.log(darkModeState);
-        
-       
-    // },[darkModeState])
 
     const colorsToUse = (dataPassed: any[])=>{
-
+        if (!dataPassed) {
+            return
+        }
         const colors: string[] = colorCombo.filter((color,index)=>{
-
             if (index  <= dataPassed.length) {
                 return color
             }
         })
-
         return colors
     }
     const data = {
@@ -56,7 +53,7 @@ const TimeSpent = () => {
             {
                 label:"Hours Spent",
                 data:datatForHoursSpent,
-                backgroundColor: colorsToUse(datatForHoursSpent),
+                backgroundColor: colorsToUse(datatForHoursSpent as number[]),
                 borderColr:"rgb(109, 109, 109)",
                 borderWidth:2
             }
@@ -104,6 +101,7 @@ const TimeSpent = () => {
           }
         }
     }
+    
   return (
     <div className='mdsm:max-h-[400px] h-[300px]  bg-white dark:bg-Dwhite  w-full   border-[1px] rounded-lg border-border p-2 my-4 w-full lg:w-[45%] md:w-[48%] flex items-center justify-center'>
 <PolarArea data={data as any} options={options as any}/>
