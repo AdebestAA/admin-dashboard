@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClientProvider>
     <html lang="en" className="dark">
+      <ClientProvider>
       <body
         className={`transition-all duration-300 dark:bg-Dbackground  bg-background  font-poppins text-text dark:text-Dtext`}
         >
@@ -55,7 +55,7 @@ export default function RootLayout({
           </div>
 
       </body>
-    </html>
         </ClientProvider>
+    </html>
   );
 }

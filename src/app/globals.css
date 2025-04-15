@@ -43,6 +43,7 @@
   --color-primary: #ff0000;
   --color-background:#f8f5f5;
   --color-hover:#efeeed;
+  --color-blue:#2563EB;
   --color-text:#535351;
   --color-red: #FF6384;
   --color-orange:#FF9F40;
@@ -60,6 +61,7 @@
   --color-Dred: #ff4c66; 
   --color-Dorange: #ff8c3e; 
   --color-Dgray: #8b8b8b; 
+  
 }
 
 .co{
@@ -82,6 +84,7 @@
   --color-orange:#FF9F40;
   --color-gray:#C9CBCF;
   --color-green:#5af75a;
+  --color-blue:#2563EB;
   /* DarkMode */
   --color-Dwhite: #0F172A; 
   --color-Dborder: #5C6777; 
@@ -92,6 +95,7 @@
   --color-Dred: #ff4c66; 
   --color-Dorange: #ff8c3e; 
   --color-Dgray: #8b8b8b; 
+  --color-blue:#2563EB;
   /* breakpoint */
   --breakpoint-xxs: 330px;
   --breakpoint-xs: 370px;

@@ -48,3 +48,8 @@ export type UsersListType = {
         lastMonth: eachCategoryType,
         lastSixMonths: eachCategoryType,
         }
+        export type notificationSliceType = {
+                id:number,
+                name:string,
+                status:boolean,
+                }
