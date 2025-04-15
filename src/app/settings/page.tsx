@@ -6,7 +6,7 @@ const Profile = dynamic(()=> import('@/components/SettingsComponents/Profile'))
 
 const page = () => {
   return (
-    <div className='mx-auto' >
+    <div className='mx-auto md:mx-16 lg:mx-32' >
       <Profile/>
       <Notification/>
       </div>

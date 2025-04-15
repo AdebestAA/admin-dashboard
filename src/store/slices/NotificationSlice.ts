@@ -23,13 +23,28 @@ const notificationSlice = createSlice({
     name:"Notification Slice",
     initialState:initialState,
     reducers:{
-        turnOn:(state:notificationSliceType[],actions:PayloadAction<string>)=>{
-            console.log(actions.payload);
+        turnOn:(state:notificationSliceType[],actions:PayloadAction<string>):notificationSliceType[]=>{
 
+let myNotification:notificationSliceType[] = JSON.parse(JSON.stringify(state))
+
+const getIndex:number = myNotification.findIndex(item =>item.name.toLocaleLowerCase().trim() == actions.payload.toLocaleLowerCase().trim())
+
+myNotification[getIndex].status = true
+console.log(myNotification);
+return myNotification
+           
+           
         },
         turnOff:(state:notificationSliceType[],actions:PayloadAction<string>)=>{
-console.log(actions.payload);
+            
+            let myNotification:notificationSliceType[] = JSON.parse(JSON.stringify(state))
 
+            const getIndex:number = myNotification.findIndex(item =>item.name.toLocaleLowerCase().trim() == actions.payload.toLocaleLowerCase().trim())
+            
+            myNotification[getIndex].status = false
+            console.log(myNotification);
+            return myNotification
+return 
         }
     }
 }) 

@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import slideBarReducer from "./slices/SlideBarSlice";
 import DarkModeReducer from "./slices/DarkMode";
+import notificationReducer from "./slices/NotificationSlice";
 
 
 const store = configureStore({
     reducer: {
         slideBar:slideBarReducer,
-        DarkModeCheck:DarkModeReducer
+        DarkModeCheck:DarkModeReducer,
+        notification:notificationReducer
     }
 })
 
