@@ -16,7 +16,7 @@ const securityState = useSelector((state:RootState)=>{
     >
          <div className='flex items-center'>
         <Lock className='text-blue' size={18}/>
-<h1 className='text-[1.1rem] font-semibold ml-2'>Security</h1>
+<h1 className='text-[1rem] md:text-[1.1rem] font-semibold ml-2'>Security</h1>
         </div>
         <div>
     {securityState.length > 0 && securityState.map((item,index)=>{

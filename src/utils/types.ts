@@ -1,5 +1,5 @@
         import { IconType } from "react-icons";
-import { SimpleIcon } from "simple-icons";
+
 
 
         // SIDE MENU TYPE
@@ -75,5 +75,5 @@ import { SimpleIcon } from "simple-icons";
         id:number,
         name:string,
         connected:boolean,
-        icon:React.ElementType
+        
         }

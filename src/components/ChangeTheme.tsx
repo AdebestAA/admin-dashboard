@@ -70,7 +70,7 @@ if (!theme) {
     {theme === "light" ? <MdOutlineDarkMode className='text-Dtext text-text' size={22} /> : <CiLight size={22} className='text-Dtext text-white' />}
 </button>
 {/* Mobile */}
-<button className='text-Dtext mdsm:hidden inline rounded-lg fixed left-[85%] top-[93%] bg-white dark:bg-Dwhite z-50 p-2 border-[gray] dar:border-Dborder border-[1px] cursor-pointer' onClick={()=> setTheme(theme === "light" ? "dark" : "light")}>
+<button className='text-Dtext mdsm:hidden inline rounded-lg fixed left-[85%] bottom-[2%] bg-white dark:bg-Dwhite z-50 p-2 border-[gray] dar:border-Dborder border-[1px] cursor-pointer' onClick={()=> setTheme(theme === "light" ? "dark" : "light")}>
     {theme === "light" ? <MdOutlineDarkMode className='text-Dtext text-text' size={22} /> : <CiLight size={22} className='text-Dtext text-text' />}
 </button>
 </>

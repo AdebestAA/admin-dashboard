@@ -1,5 +1,6 @@
 "use client"
 import ConnectedSocials from '@/components/SettingsComponents/ConnectedSocials'
+import DangerZone from '@/components/SettingsComponents/DangerZone'
 import Notification from '@/components/SettingsComponents/Notification'
 import Security from '@/components/SettingsComponents/Security'
 import dynamic from 'next/dynamic'
@@ -13,6 +14,7 @@ const page = () => {
       <Notification/>
       <Security/>
       <ConnectedSocials/>
+      <DangerZone/>
       </div>
   )
 }
