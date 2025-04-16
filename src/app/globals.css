@@ -48,6 +48,7 @@
   --color-red: #FF6384;
   --color-orange:#FF9F40;
   --color-gray:#C9CBCF;
+  --color-green:#20a614;
 
 }
 
@@ -85,6 +86,7 @@
   --color-gray:#C9CBCF;
   --color-green:#5af75a;
   --color-blue:#2563EB;
+  --color-green:#20a614;
   /* DarkMode */
   --color-Dwhite: #0F172A; 
   --color-Dborder: #5C6777; 
@@ -96,6 +98,7 @@
   --color-Dorange: #ff8c3e; 
   --color-Dgray: #8b8b8b; 
   --color-blue:#2563EB;
+  --color-green:#20a614;
   /* breakpoint */
   --breakpoint-xxs: 330px;
   --breakpoint-xs: 370px;

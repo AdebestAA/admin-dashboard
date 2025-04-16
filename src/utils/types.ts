@@ -1,55 +1,79 @@
-import { IconType } from "react-icons";
-
-export type sideBarMenuTypes = {
-    id:number,
-    name:string,
-    link:string,
-    icon:React.ElementType,
-
-}
+        import { IconType } from "react-icons";
+import { SimpleIcon } from "simple-icons";
 
 
-export type statsType = {
+        // SIDE MENU TYPE
+        export type sideBarMenuTypes = {
+        id:number,
+        name:string,
+        link:string,
+        icon:React.ElementType,
+
+        }
+
+
+        // STATS TYPE
+        export type statsType = {
         id:number,
         name:string,
         value:number,
         icon:React.ElementType
-}
+        }
 
+        //   PRODUCT LIST TYPE
 
-export type productsListType = { 
+        export type productsListType = { 
         id: number,
         name: string,
         price: number,
         category: string,
         available: number,
         sold: number
-}
+        }
 
-
-export type UsersListType = {
+        // USERS LIST TYPE
+        export type UsersListType = {
         id: number,
         name: string,
         email: string,
         role: "Admin" | "Member",
         status: "Active" | "Inactive",
-      };
+        };
 
+        //       EACH CATEGORY TYPE
         type eachCategoryType = {
         label: string[];
         target: number[];
         revenue: number[];
         };
 
+
+        // REVENUE VS TARGET TYPE
         export   type revenueVsTargetDataType = {
-       
         thisWeek: eachCategoryType,
         thisMonth: eachCategoryType,
         lastMonth: eachCategoryType,
         lastSixMonths: eachCategoryType,
         }
+
+        // NOTIFICATION SLICE TYPE 
         export type notificationSliceType = {
-                id:number,
-                name:string,
-                status:boolean,
-                }
+        id:number,
+        name:string,
+        status:boolean,
+        }
+
+        // SECURITYSLICE TYPE
+        export type securitySliceType = {
+        id:number,
+        name:string,
+        status:boolean,
+        }
+        
+        // CONNECTED SOCIAL TYPES 
+        export type connectedSocialsSliceType = {
+        id:number,
+        name:string,
+        connected:boolean,
+        icon:React.ElementType
+        }
