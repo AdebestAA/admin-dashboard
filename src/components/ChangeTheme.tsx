@@ -7,7 +7,7 @@ import { appDispatch, RootState } from '@/store';
 import { returnFalse, returnTrue } from '@/store/slices/DarkMode';
 
 const ChangeTheme = () => {
-   
+   "use client"
     const dispatch = useDispatch<appDispatch>()
     const darkModeState = useSelector((state:RootState)=>{
 
@@ -19,10 +19,11 @@ const ChangeTheme = () => {
           }
           return "light";
     })
+    const [loading,setLoading] = useState<boolean>(true)
     useEffect(()=>{
         if (typeof window !== "undefined") {
         
-            
+            setLoading(false)
             if (theme === "dark") {
                 document.documentElement.classList.add("dark")
                 
@@ -60,7 +61,7 @@ if (typeof window == "undefined") {
 }
 
     
-if (!theme) {
+if (loading) {
     return null
 }
   return (

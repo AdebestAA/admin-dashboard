@@ -7,9 +7,10 @@ import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { useDispatch, useSelector } from 'react-redux';
 // import ChangeTheme from './ChangeTheme';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
+import ChangeTheme from './ChangeTheme';
 
-const ChangeTheme = dynamic(() => import('./ChangeTheme'), { ssr: false });
+// const ChangeTheme = dynamic(() => import('./ChangeTheme'), { ssr: false });
 
 const Header = () => {
     const dispatch = useDispatch<appDispatch>()

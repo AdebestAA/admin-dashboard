@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <ClientProvider>
       <body suppressHydrationWarning={true}
-        className={`transition-all duration-300 dark:bg-Dbackground  bg-background  font-poppins text-text dark:text-Dtext`}
+        className={`transition-all duration-300 dark:bg-Dbackground  bg-background text-text dark:text-Dtext`}
         >
 {/* desktop */}
           <main className="mdsm:flex hidden w-full">
