@@ -2,6 +2,7 @@
 import { AnalyticsStats } from '@/utils/AnalyticsStats'
 import { colorCombo } from '@/utils/Color'
 import { MdArrowOutward } from "react-icons/md";
+import { FiArrowDownLeft } from "react-icons/fi";
 
 import gsap from 'gsap'
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
@@ -74,7 +75,7 @@ gsap.fromTo(cardRef.current,
                   <aside   className={`flex flex-col items-start items-center gap-x-[4px] ${item.name.toLocaleLowerCase().trim().replace(" ","") === "totalusers" ? "text-[#36A2EB]" : item.name.toLocaleLowerCase().trim().replace(" ","") === "newusers" ? "text-[#9966FF]" : item.name.toLocaleLowerCase().trim().replace(" ","") === "activeusers" ? "text-[#FF9F40]" : "text-[#FF6384]" } `}>
                     <span className="text-text dark:text-Dtext font-semibold ">{item.name}</span>
                     <span className="text-Dwhite dark:text-white font-semibold ">{item.value}</span>
-                    <h5 className="text-[0.9rem] flex"><span className={`flex items-center  ${item.increased ? "text-green" : "text-red"} text-[0.8rem]`}><MdArrowOutward/> {item.percentageGrowth}%</span> <span className='text-text ml-2 '>vs last period</span> </h5>
+                    <h5 className="text-[0.9rem] flex"><span className={`flex items-center  ${item.increased ? "text-green" : "text-red"} text-[0.8rem]`}>{item.increased ? <MdArrowOutward/> : <FiArrowDownLeft/> } {item.percentageGrowth}%</span> <span className='text-text ml-2 '>vs last period</span> </h5>
 
                  
                   </aside>
