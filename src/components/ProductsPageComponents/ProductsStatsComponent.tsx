@@ -69,7 +69,7 @@ gsap.fromTo(cardRef.current,
                 onMouseLeave={()=> handleMouseLeave(index)}
     
                 >
-                  <aside   className="flex items-center gap-x-[4px]"><item.icon  style={{color:`${colorCombo[index]}`}} /><span className="text-text font-semibold ">{item.name}</span></aside>
+                  <aside   className="flex items-center gap-x-[4px]"><item.icon  style={{color:`${colorCombo[index]}`}} /><span className="text-text dark:text-Dtext font-semibold ">{item.name}</span></aside>
                   <h1 className="font-bold text-lg py-[2px] m-[2px] px-[2px]"><span>{item.name.toLocaleLowerCase().trim().replace(" ","") === "totalrevenue" ? "$" : ""}</span><span>{item.value > 50 && valueCount < item.value ? valueCount : item.value}</span></h1>
                 </div>
               )
