@@ -67,7 +67,7 @@ const UsersListComponent = () => {
   return (
      <div className='w-[95%] bg-white dark:bg-Dwhite mx-auto my-16  rounded-lg border-gray border-[1px] px-2 py-2' ref={listContainerRef}>
             <header className='flex justify-between text-sm' >
-                <h1 className='font-semibold'>Products List</h1>
+                <h1 className='font-semibold'>Users List</h1>
                <aside className='flex items-center active-red bg-hover border-[2px] rounded-md border-gray'>
                 <span className='p-[4px] '><FiSearch className='text-text dark:text-black' /></span>
                 <input type="text" className='bg-border dark:bg-Dborder outline-none' ref={inputRef} />
