@@ -7,7 +7,7 @@ const DangerZone = () => {
     <div className="w-[95%] mx-auto flex flex-col  my-4 bg-[#620f0f]  border-[#ff0c0c]  border-[1px] rounded-lg py-4 px-4"    
     >
         <div className='flex items-center'>
-        <MdDeleteOutline className='text-[#e30000]' size={18}/>
+        <MdDeleteOutline className='text-[#e30000]' size={20}/>
 
 <h1 className='text-[1rem] text-[#e30000] md:text-[1.1rem] font-semibold ml-2'> DangerZone</h1>
         </div>

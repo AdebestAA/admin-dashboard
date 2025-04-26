@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className='w-[95%] mx-auto flex flex-col my-4 bg-white dark:bg-Dwhite border-border dark:border-Dborder border-[1px] rounded-lg py-4 px-2'>
         <div className='flex items-center'>
-        <User className='text-blue' size={18}/>
+        <User className='text-blue' size={20}/>
 <h1 className='text-[1rem] md:text-[1.1rem] font-semibold ml-2'>Profile</h1>
         </div>
 
