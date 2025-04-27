@@ -38,7 +38,7 @@ else{
     dispatch(openSlide())
 }
 
-}}>{slideState ?  <IoClose /> : <FaBars />}</button>
+}}>{slideState ?  <IoClose size={20} /> : <FaBars size={20}/>}</button>
     </div>
   )
 }
